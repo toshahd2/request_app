@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+<body>
+<style>
+    form{
+        background-color:#ffffff;
+        width:70%;
+        margin:0 auto;
+        padding:15px;
+    }
+</style>
+
+<H1>Список согласованных заявок</H1>
+
+<table border="1" width="100%">
+    <tr>
+        <th><h3>Номер заявки</h3></th>
+        <th><h3>Организация</h3></th>
+        <th><h3>Контактное лицо</h3></th>
+        <th><h3>Описание работ</h3></th>
+        <th><h3>Статус заявки</h3></th>
+        <th><h3>Комментарии</h3></th>
+    </tr>
+    {{#requests}}
+        <tr>
+            <th>{{id}}</th>
+            <th>{{company}}</th>
+            <th>{{contact}}</th>
+            <th>{{task}}</th>
+            <th>{{status}}</th>
+            <th>{{comment}}</th>
+        </tr>
+    {{/requests}}
+</table>
+</body>
+</html>

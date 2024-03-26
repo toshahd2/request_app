@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html>
+<body>
+<style>
+    form{
+        background-color:#ffffff;
+        width:70%;
+        margin:0 auto;
+        padding:15px;
+    }
+</style>
+
+<form method="post">
+    <fieldset>
+        <legend><h1>Форма согласования заявки</h1></legend>
+        <label> Введите номер заявки: <input type="text" size="20" name="id" placeholder="Номер заявки"></input></label>
+        <label> Выберите статус: <select name="status">
+            <option selected value="согласовано">Согласовано</option>
+            <option value="не согласовано">Не согласовано</option>
+        </select></label><br><br>
+        <label> Введите комментарий: <input type="text" size="60" name="comment" placeholder="Комментарий согласования"></input></label><br><br>
+        <label><button type="submit" style="color: orange;">Отправить решение</button></label>
+    </fieldset>
+</form>
+
+<H2>Список заявок на согласование</H2>
+
+<table border="1" width="100%">
+    <tr>
+        <th><h3>Номер заявки</h3></th>
+        <th><h3>Организация</h3></th>
+        <th><h3>Контактное лицо</h3></th>
+        <th><h3>Описание работ</h3></th>
+        <th><h3>Статус заявки</h3></th>
+        <th><h3>Комментарии</h3></th>
+    </tr>
+    {{#requests}}
+        <tr>
+            <th>{{id}}</th>
+            <th>{{company}}</th>
+            <th>{{contact}}</th>
+            <th>{{task}}</th>
+            <th>{{status}}</th>
+            <th>{{comment}}</th>
+        </tr>
+    {{/requests}}
+</table>
+</body>
+</html>
